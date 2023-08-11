@@ -1,0 +1,43 @@
+server:
+  port: @server.port@
+spring:
+  datasource:
+    username:
+    password:
+    url: jdbc:mysql://{ip:port}/{database}?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=PRC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 50
+      max-lifetime: 600000
+    tomcat:
+      test-on-borrow: true
+      validation-query: SELECT  1
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    show-sql: true
+    generate-ddl: true
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    properties:
+      hibernate:
+        generate_statistics: false
+        jdbc:
+          batch_size: 1000
+        order_inserts: true
+
+logging:
+  level:
+    root: debug
+    org.hibernate.SQL: debug
+    org.hibernate.engine.QueryParameters: debug
+    org.hibernate.engine.query.HQLQueryPlan: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+  file:
+    path: logs-luban/tiny-url/${spring.application.name}
+  logback:
+    rollingpolicy:
+      max-history: 30
+      max-file-size: 10485760
