@@ -1,0 +1,16 @@
+server:
+  port: @server.port@
+spring:
+  application:
+    name: tiny-url
+  profiles:
+    active: @profiles.active@
+
+tinyurl:
+  number:
+    generator:
+      type: db-single
+    codec:
+      type: custom-base
+  cache:
+    enable: true

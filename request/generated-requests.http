@@ -1,0 +1,31 @@
+### disable caching
+POST http://localhost:8100/tinyUrl/command/_create
+Content-Type: application/json
+
+{
+  "url": "https://www.baidu.com"
+}
+
+
+### using cache
+POST http://localhost:8100/tinyUrl/command/_create
+Content-Type: application/json
+
+{
+  "url": "https://www.baidu.com",
+  "enableCache": true
+}
+
+### using maxCount
+POST http://localhost:8100/tinyUrl/command/_create/limitAccessCount
+Content-Type: application/json
+
+{
+  "url": "https://www.baidu.com",
+  "maxCount": 2,
+  "enableCache": true
+}
+
+
+### request with tiny url
+GET http://localhost:8100/s/eqXK0W5zlj6
