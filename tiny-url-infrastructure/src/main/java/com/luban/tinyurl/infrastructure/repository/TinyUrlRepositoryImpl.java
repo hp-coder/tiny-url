@@ -46,4 +46,10 @@ public class TinyUrlRepositoryImpl implements TinyUrlRepository {
     public void incrAccessCount(Long id, Integer incrCount) {
         tinyUrlDao.incrAccessCount(id, incrCount);
     }
+
+    @Override
+    public Optional<TinyUrl> findByUrl(String url) {
+       return  tinyUrlDao.findByUrl(url);
+
+    }
 }

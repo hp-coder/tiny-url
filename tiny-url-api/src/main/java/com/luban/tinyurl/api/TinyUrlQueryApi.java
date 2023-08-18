@@ -1,5 +1,8 @@
 package com.luban.tinyurl.api;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 /**
  * @author hp
  */
@@ -7,7 +10,10 @@ public interface TinyUrlQueryApi {
 
     String PATH = "tingurl/query";
 
-    String queryByCode(String code);
+    @GetMapping("queryByCode/{code}")
+    String queryByCode(@PathVariable(value = "code") String code);
 
-    String accessByCode(String code);
+    @GetMapping("accessByCode/{code}")
+    String accessByCode(@PathVariable(value = "code") String code);
+
 }

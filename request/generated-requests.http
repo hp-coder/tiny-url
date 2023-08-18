@@ -3,7 +3,7 @@ POST http://localhost:8100/tinyUrl/command/_create
 Content-Type: application/json
 
 {
-  "url": "https://www.baidu.com"
+  "url": "http://192.168.0.192:9900/2023-07/25-1690271629042-AeO.xls"
 }
 
 

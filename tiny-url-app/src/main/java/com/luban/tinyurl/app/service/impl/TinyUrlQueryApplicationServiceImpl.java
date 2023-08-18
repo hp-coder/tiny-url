@@ -47,4 +47,9 @@ public class TinyUrlQueryApplicationServiceImpl implements TinyUrlQueryApplicati
     public Optional<TinyUrl> accessByCode(String code) {
         return accessById(numberCodec.decode(code));
     }
+
+    @Override
+    public Optional<TinyUrl> findByUrl(String url) {
+        return tinyUrlRepository.findByUrl(url);
+    }
 }

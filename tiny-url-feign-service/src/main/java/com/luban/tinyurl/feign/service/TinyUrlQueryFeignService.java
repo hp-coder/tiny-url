@@ -1,7 +1,7 @@
 package com.luban.tinyurl.feign.service;
 
-import com.luban.tinyurl.app.service.TinyUrlQueryApplicationService;
 import com.luban.tinyurl.api.TinyUrlQueryApi;
+import com.luban.tinyurl.app.service.TinyUrlQueryApplicationService;
 import com.luban.tinyurl.domain.TinyUrl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
@@ -22,7 +22,7 @@ public class TinyUrlQueryFeignService implements TinyUrlQueryApi {
 
     @GetMapping("queryByCode/{code}")
     @Override
-    public String queryByCode(@PathVariable String code) {
+    public String queryByCode(@PathVariable("code") String code) {
         Optional<TinyUrl> tinyUrlOptional = this.queryApplicationService.findByCode(code);
         return tinyUrlOptional
                 .filter(TinyUrl::accessible)
@@ -32,7 +32,7 @@ public class TinyUrlQueryFeignService implements TinyUrlQueryApi {
 
     @GetMapping("accessByCode/{code}")
     @Override
-    public String accessByCode(String code) {
+    public String accessByCode(@PathVariable("code") String code) {
         Optional<TinyUrl> tinyUrlOptional = this.queryApplicationService.accessByCode(code);
         return tinyUrlOptional
                 .filter(TinyUrl::accessible)

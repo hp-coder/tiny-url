@@ -20,9 +20,9 @@ public interface TinyUrlCommandApi {
     @PostMapping("_create/limitAccessCount")
     CreateTinyUrlResponse createLimitAccessCount(@RequestBody CreateTinyUrlWithAccessCountLimitationRequest request);
 
-    @PostMapping("{id}/_disable/")
-    void disable(@PathVariable Long id);
+    @PostMapping("{id}/_disable")
+    void disable(@PathVariable(value = "id") Long id);
 
-    @PostMapping("{id}/_enable/")
-    void enable(@PathVariable Long id);
+    @PostMapping("{id}/_enable")
+    void enable(@PathVariable(value = "id") Long id);
 }

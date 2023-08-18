@@ -59,17 +59,17 @@ public class TinyUrlCommandFeignService implements TinyUrlCommandApi {
     }
 
 
-    @PostMapping("{id}/_disable/")
+    @PostMapping("{id}/_disable")
     @Override
-    public void disable(@PathVariable Long id) {
+    public void disable(@PathVariable("id") Long id) {
         final DisableTinyUrlCommand command = new DisableTinyUrlCommand();
         command.setId(id);
         commandApplicationService.disableTinyUrl(command);
     }
 
-    @PostMapping("{id}/_enable/")
+    @PostMapping("{id}/_enable")
     @Override
-    public void enable(@PathVariable Long id) {
+    public void enable(@PathVariable("id") Long id) {
         final EnableTinyUrlCommand command = new EnableTinyUrlCommand();
         command.setId(id);
         commandApplicationService.enableTinyUrl(command);

@@ -15,4 +15,5 @@ public interface TinyUrlRepository {
 
     void incrAccessCount(Long id, Integer incrCount);
 
+    Optional<TinyUrl> findByUrl(String url);
 }
