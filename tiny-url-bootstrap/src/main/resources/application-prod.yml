@@ -10,9 +10,9 @@ logging:
       max-file-size: 10485760
 spring:
   datasource:
-    username: root
-    password: 123456
-    url: jdbc:mysql://192.168.0.192:10100/tinyurl?useUnicode=true&characterEncoding=utf-8&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=PRC
+    username: lbSource
+    password: 1RGHuOgFw8jFwkm7gA
+    url: jdbc:mysql://172.18.127.98:3306/tiny_url?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8&rewriteBatchedStatements=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
       maximum-pool-size: 50
@@ -37,9 +37,10 @@ spring:
         order_inserts: true
   data:
     redis:
-      host: 192.168.0.192
-      port: 10600
-      password: root
+      host: 127.0.0.1
+      port: 6379
+      password: LHF0hFNHJKLDmai6879
+      database: 1
       lettuce:
         pool:
           enabled: true
