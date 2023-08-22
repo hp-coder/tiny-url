@@ -41,6 +41,3 @@ spring:
       port: 6379
       password: LHF0hFNHJKLDmai6879
       database: 1
-      lettuce:
-        pool:
-          enabled: true
