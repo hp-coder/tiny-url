@@ -40,14 +40,14 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <server.port>8100</server.port>
+                <server.port>8123</server.port>
                 <profiles.active>dev</profiles.active>
             </properties>
         </profile>
         <profile>
             <id>prod</id>
             <properties>
-                <server.port>99</server.port>
+                <server.port>9123</server.port>
                 <profiles.active>prod</profiles.active>
             </properties>
         </profile>
