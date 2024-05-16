@@ -3,6 +3,11 @@ package com.luban.tinyurl.domain;
 
 import cn.hutool.core.util.StrUtil;
 import com.google.common.base.Preconditions;
+import com.luban.common.base.annotation.FieldDesc;
+import com.luban.common.base.enums.ValidStatus;
+import com.luban.jpa.BaseJpaAggregate;
+import com.luban.jpa.convertor.LocalDateTimeConverter;
+import com.luban.jpa.convertor.ValidStatusConverter;
 import com.luban.tinyurl.domain.command.AbstractCreateTinyUrlCommand;
 import com.luban.tinyurl.domain.command.AccessTinyUrlCommand;
 import com.luban.tinyurl.domain.command.DisableTinyUrlCommand;
@@ -11,17 +16,13 @@ import com.luban.tinyurl.domain.context.CreateTinyUrlContext;
 import com.luban.tinyurl.domain.context.CreateTinyUrlWithAccessCountLimitationContext;
 import com.luban.tinyurl.domain.context.CreateTinyUrlWithExpirationContext;
 import com.luban.tinyurl.domain.event.TinyUrlDomainEvents;
-import com.luban.common.base.annotations.FieldDesc;
-import com.luban.common.base.enums.ValidStatus;
-import com.luban.jpa.BaseJpaAggregate;
-import com.luban.jpa.convertor.LocalDateTimeConverter;
-import com.luban.jpa.convertor.ValidStatusConverter;
 import jakarta.persistence.Column;
 import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.proxy.HibernateProxy;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -176,5 +177,21 @@ public class TinyUrl extends BaseJpaAggregate {
             setStatus(ValidStatus.INVALID);
             registerEvent(new TinyUrlDomainEvents.TinyUrlDisabledEvent(this));
         }
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null) return false;
+        Class<?> oEffectiveClass = o instanceof HibernateProxy ? ((HibernateProxy) o).getHibernateLazyInitializer().getPersistentClass() : o.getClass();
+        Class<?> thisEffectiveClass = this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass() : this.getClass();
+        if (thisEffectiveClass != oEffectiveClass) return false;
+        TinyUrl tinyUrl = (TinyUrl) o;
+        return getId() != null && Objects.equals(getId(), tinyUrl.getId());
+    }
+
+    @Override
+    public final int hashCode() {
+        return this instanceof HibernateProxy ? ((HibernateProxy) this).getHibernateLazyInitializer().getPersistentClass().hashCode() : getClass().hashCode();
     }
 }

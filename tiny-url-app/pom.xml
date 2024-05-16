@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.luban</groupId>
         <artifactId>tiny-url</artifactId>
-        <version>1.0.0-sp3-SNAPSHOT</version>
+        <version>1.0.0-sp3.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>tiny-url-app</artifactId>
@@ -18,17 +18,17 @@
         <dependency>
             <groupId>com.luban</groupId>
             <artifactId>tiny-url-infrastructure</artifactId>
-            <version>1.0.0-sp3-SNAPSHOT</version>
+            <version>1.0.0-sp3.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.luban</groupId>
             <artifactId>tiny-url-api</artifactId>
-            <version>1.0.0-sp3-SNAPSHOT</version>
+            <version>1.0.0-sp3.2-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.luban</groupId>
             <artifactId>tiny-url-domain</artifactId>
-            <version>1.0.0-sp3-SNAPSHOT</version>
+            <version>1.0.0-sp3.2-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>

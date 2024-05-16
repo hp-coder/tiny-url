@@ -1,6 +1,8 @@
 package com.luban.tinyurl.api;
 
+import com.luban.common.base.model.Request;
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -9,7 +11,8 @@ import javax.validation.constraints.NotNull;
  * @author hp
  */
 @Data
-public class CreateTinyUrlWithAccessCountLimitationRequest {
+@Validated
+public class CreateTinyUrlWithAccessCountLimitationRequest implements Request {
     @NotEmpty
     private String url;
 

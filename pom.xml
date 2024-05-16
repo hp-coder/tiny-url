@@ -4,11 +4,11 @@
     <parent>
         <groupId>com.luban</groupId>
         <artifactId>common-bom</artifactId>
-        <version>1.0.0-sp3-SNAPSHOT</version>
+        <version>1.0.1-sp3.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>tiny-url</artifactId>
-    <version>1.0.0-sp3-11-SNAPSHOT</version>
+    <version>1.0.0-sp3.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
@@ -21,9 +21,9 @@
     </modules>
 
     <properties>
-        <common-base.version>1.0.0-sp3-SNAPSHOT</common-base.version>
-        <code-gen-starter.version>1.0.0-sp3-SNAPSHOT</code-gen-starter.version>
-        <jpa-starter.version>1.0.0-sp3-SNAPSHOT</jpa-starter.version>
+        <common-base.version>1.0.0-sp3.2-SNAPSHOT</common-base.version>
+        <code-gen-starter.version>1.0.3-sp3.2-SNAPSHOT</code-gen-starter.version>
+        <jpa-starter.version>1.0.1-sp3.2-SNAPSHOT</jpa-starter.version>
     </properties>
 
     <dependencyManagement>

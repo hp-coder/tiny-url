@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Validated
 @RestController
 @RequestMapping(TinyUrlCommandApi.PATH)
@@ -21,7 +23,7 @@ public class TinyUrlCommandFeignService implements TinyUrlCommandApi {
 
     @Override
     @PostMapping("_create")
-    public CreateTinyUrlResponse createTinyUrl(@RequestBody CreateTinyUrlRequest request) {
+    public CreateTinyUrlResponse createTinyUrl(@RequestBody @Valid CreateTinyUrlRequest request) {
         final CreateTinyUrlCommand command = new CreateTinyUrlCommand();
         command.setUrl(request.getUrl());
         command.setEnableCache(request.getEnableCache());
@@ -33,7 +35,7 @@ public class TinyUrlCommandFeignService implements TinyUrlCommandApi {
 
     @PostMapping("_create/expire")
     @Override
-    public CreateTinyUrlResponse createExpire(CreateTinyUrlWithExpirationRequest request) {
+    public CreateTinyUrlResponse createExpire(@RequestBody @Valid CreateTinyUrlWithExpirationRequest request) {
         final CreateTinyUrlWithExpirationCommand command = new CreateTinyUrlWithExpirationCommand();
         command.setUrl(request.getUrl());
         command.setEnableCache(request.getEnableCache());
@@ -47,7 +49,7 @@ public class TinyUrlCommandFeignService implements TinyUrlCommandApi {
 
     @PostMapping("_create/limitAccessCount")
     @Override
-    public CreateTinyUrlResponse createLimitAccessCount(CreateTinyUrlWithAccessCountLimitationRequest request) {
+    public CreateTinyUrlResponse createLimitAccessCount(@RequestBody @Valid CreateTinyUrlWithAccessCountLimitationRequest request) {
         final CreateTinyUrlWithAccessCountLimitationCommand command = new CreateTinyUrlWithAccessCountLimitationCommand();
         command.setUrl(request.getUrl());
         command.setEnableCache(request.getEnableCache());

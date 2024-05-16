@@ -1,7 +1,9 @@
 
 package com.luban.tinyurl.api;
 
+import com.luban.common.base.model.Request;
 import lombok.Data;
+import org.springframework.validation.annotation.Validated;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -11,7 +13,8 @@ import java.time.LocalDateTime;
  * @author hp
  */
 @Data
-public class CreateTinyUrlWithExpirationRequest {
+@Validated
+public class CreateTinyUrlWithExpirationRequest implements Request {
 
     @NotEmpty
     private String url;
