@@ -1,6 +1,7 @@
 package com.luban.tinyurl.infrastructure.repository;
 
 import com.luban.tinyurl.domain.TinyUrl;
+import com.luban.tinyurl.domain.gateway.TinyUrlRepository;
 import com.luban.tinyurl.infrastructure.cache.TinyUrlCache;
 import com.luban.tinyurl.infrastructure.repository.dao.TinyUrlDao;
 import jakarta.transaction.Transactional;

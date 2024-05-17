@@ -1,6 +1,6 @@
 package com.luban.tinyurl.app.service.impl;
 
-import com.luban.tinyurl.infrastructure.repository.TinyUrlRepository;
+import com.luban.tinyurl.domain.gateway.TinyUrlRepository;
 import com.luban.tinyurl.app.event.TinyUrlApplicationEvents;
 import com.luban.tinyurl.app.service.TinyUrlQueryApplicationService;
 import com.luban.tinyurl.domain.TinyUrl;

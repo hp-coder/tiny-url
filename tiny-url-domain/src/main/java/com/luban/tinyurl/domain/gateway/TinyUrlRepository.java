@@ -1,4 +1,4 @@
-package com.luban.tinyurl.infrastructure.repository;
+package com.luban.tinyurl.domain.gateway;
 
 import com.luban.tinyurl.domain.TinyUrl;
 

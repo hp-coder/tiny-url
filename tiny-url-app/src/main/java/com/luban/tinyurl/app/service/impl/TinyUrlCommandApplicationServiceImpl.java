@@ -7,7 +7,7 @@ import com.luban.tinyurl.domain.context.CreateTinyUrlContext;
 import com.luban.tinyurl.domain.context.CreateTinyUrlWithAccessCountLimitationContext;
 import com.luban.tinyurl.domain.context.CreateTinyUrlWithExpirationContext;
 import com.luban.tinyurl.infrastructure.cache.TinyUrlCache;
-import com.luban.tinyurl.infrastructure.repository.TinyUrlRepository;
+import com.luban.tinyurl.domain.gateway.TinyUrlRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
