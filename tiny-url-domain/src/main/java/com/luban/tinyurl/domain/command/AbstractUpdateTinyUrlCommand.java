@@ -3,7 +3,7 @@ package com.luban.tinyurl.domain.command;
 import com.luban.common.base.command.CommandForUpdateById;
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * @author hp

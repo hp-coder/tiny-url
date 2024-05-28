@@ -3,7 +3,7 @@ package com.luban.tinyurl.domain.command;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotNull;
+import jakarta.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
