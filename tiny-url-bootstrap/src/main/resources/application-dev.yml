@@ -1,11 +1,11 @@
 logging:
   level:
     root: info
-    com.luban: debug
+    com.hp: debug
     org.springframework.web: trace
     org.springframework.data.rest: trace
   file:
-    path: logs-luban/${spring.application.name}
+    path: logs-hp/${spring.application.name}
   logback:
     rollingpolicy:
       max-history: 10

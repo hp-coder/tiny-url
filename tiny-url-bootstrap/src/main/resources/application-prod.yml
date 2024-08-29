@@ -1,9 +1,9 @@
 logging:
   level:
     root: info
-    com.luban: info
+    com.hp: info
   file:
-    path: logs-luban/${spring.application.name}
+    path: logs-hp/${spring.application.name}
   logback:
     rollingpolicy:
       max-history: 10
